@@ -1,5 +1,8 @@
 {
   "name": "Progressive",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "08654bc8",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

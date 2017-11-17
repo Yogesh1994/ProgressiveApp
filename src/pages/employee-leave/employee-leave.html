@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Leave
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <h3 text-center>Leave Application</h3>
+
+
+    <div class="container">
+        <form [formGroup]="UserForm" (ngSubmit)="submitform()">    
+        <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" formControlName='name' placeholder="Enter Your Name">    
+        </div>
+        <div *ngIf="UserForm.controls['name'].hasError('required')">
+                <p style="color: red">*Name Required </p>
+        </div>
+        <div class="form-group">
+            <label for="sel1">Subject:</label>
+            <select class="form-control" id="sel1" formControlName='subject'>
+                <option value="" selected>Select Type</option>
+                <option value="Personal Leave">Personal Leave</option>
+                <option value="Sick Leave">Sick Leave</option>
+           </select>
+        </div>
+        <div *ngIf="UserForm.controls['subject'].hasError('required')">
+                <p style="color: red">*Please Select leave type </p>
+        </div>
+        <div class="form-group">
+            <label for="comment">Description:</label>
+            <textarea class="form-control" rows="3" id="comment" formControlName='description'></textarea>
+        </div>
+        <div *ngIf="UserForm.controls['description'].hasError('required')">
+                <p style="color: red">*Please Select leave Description </p>
+        </div>
+         <div *ngIf="UserForm.controls['description'].hasError('minlength')">
+                <p style="color: red">*Please enter minimum 10 characers  </p>
+        </div>
+            
+
+        <div class="form-group">
+                        <label for="usr">From:</label>
+                        <input type="date" class="form-control" formControlName='fromDate'>
+        </div>
+   
+  
+ 
+        <div class="form-group">
+                        <label for="usr">To:</label>
+                        <input type="date" class="form-control" formControlName='ToDate'>
+        </div>
+   
+ 
+
+        <table width="100%">
+            <tr>
+                <td width="50%">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        </table>
+         <div *ngIf="UserForm.controls['fromDate'].hasError('required') && UserForm.controls['ToDate'].hasError('required')">
+                <p style="color: red">*Please dates </p>
+        </div>
+        <button type="submit" [disabled]='!UserForm.valid' class="btn btn-primary" style="width: 100%">Submit</button>
+        </form>
+    </div>
+</ion-content>

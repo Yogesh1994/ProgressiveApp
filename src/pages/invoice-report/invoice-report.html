@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>invoiceReport</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<form [formGroup]="userform" (ngSubmit)="onSubmit()" padding>
+  <div class="form-group">
+        <label for="sel1">Select Period:</label>
+        <select class="form-control" id="selectPeriod" formControlName="selectPeriod">
+                  <option>Today</option>
+                  <option>Week</option>
+                  <option>Month</option>
+                  <option>Year</option>
+                  <option>All</option>         
+        </select>
+        
+    </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!userform.valid" style="width: 100%;">Send Details on mail</button>
+</form>
+</ion-content>

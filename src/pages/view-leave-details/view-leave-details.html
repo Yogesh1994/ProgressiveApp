@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ViewLeaveDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Leave Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<ion-card >
+    <table  border="0" width="100%">
+      <tr>
+        <td style="font-size:15px;padding-left: 10px"><b>Employee Name:</b></td>
+        <td style="font-size:15px;padding-left: 10px">{{emp_name}}</td>
+      </tr>
+       <tr>
+        <td style="font-size:15px;padding-left: 10px"><b>Subject:</b></td>
+        <td style="font-size:15px;padding-left: 10px">{{subject}}</td>
+      </tr>
+       <tr>
+        <td style="font-size:15px;padding-left: 10px"><b>Description:</b></td>
+        <td style="font-size:15px;padding-left: 10px">{{desc}}</td>
+      </tr>
+       <tr>
+        <td style="font-size:15px;padding-left: 10px"><b>Date From:</b></td>
+        <td style="font-size:15px;padding-left: 10px">{{from}}</td>
+      </tr>
+       <tr>
+        <td style="font-size:15px;padding-left: 10px"><b>Date To:</b></td>
+        <td style="font-size:15px;padding-left: 10px">{{to}}</td>
+      </tr>
+       <tr>
+        <td style="font-size:15px;padding-left: 10px"><b>Leave Status:</b></td>
+        <td style="font-size:15px;padding-left: 10px">{{status}}</td>
+      </tr>
+       <tr>
+        <td style="font-size:15px;padding-left: 10px"><b>Rejection Description:</b></td>
+        <td style="font-size:15px;padding-left: 10px">{{rej_desc}}</td>
+      </tr><br>
+      <tr>
+        <td width="50%"padding><button type="button" (click)="Accept()" class="btn btn-success btn-block">Accept</button></td>
+        <td width="50%;" padding><button type="button" (click)="Reject()" class="btn btn-danger btn-block">Reject</button></td>
+      </tr>
+    </table>
+
+</ion-card>
+</ion-content>

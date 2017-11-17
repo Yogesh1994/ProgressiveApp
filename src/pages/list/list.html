@@ -1,0 +1,155 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Clients</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="userType=='Other'" style="background: #F8F9FB">
+     <table border="0" width="100%">
+       <tr>
+         <td >
+           <ion-card>
+             <img src="img/client/aec.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/amrut_infomedia.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/bharat_petrolium.png">
+           </ion-card>
+         </td>
+       </tr>
+
+       <tr>
+         <td >
+           <ion-card>
+             <img src="img/client/callista.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/cermalvisa.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/excel_acedmy.png">
+           </ion-card>
+         </td>
+       </tr>
+
+       <tr>
+         <td >
+           <ion-card>
+             <img src="img/client/goal_gail.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/happy_home_group.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/klickkaro.png">
+           </ion-card>
+         </td>
+       </tr>
+
+       <tr>
+         <td >
+           <ion-card>
+             <img src="img/client/mfriend.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/pbt.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/perk.png">
+           </ion-card>
+         </td>
+       </tr>
+
+       <tr>
+         <td >
+           <ion-card>
+             <img src="img/client/phoenix.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/santa_godavri.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/scantech.png">
+           </ion-card>
+         </td>
+       </tr>
+
+       <tr>
+         <td >
+           <ion-card>
+             <img src="img/client/scantech_laser.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/shanti_polyfab.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/tta.png">
+           </ion-card>
+         </td>
+       </tr>
+
+       <tr>
+         <td >
+           <ion-card>
+             <img src="img/client/ttiwta.png">
+           </ion-card>
+         </td>
+         <td >
+           <ion-card>
+             <img src="img/client/varmora.png">
+           </ion-card>
+         </td>
+         
+       </tr>
+     </table>
+  </div>
+
+  <div *ngIf="userType=='A'" padding>
+     
+      <button ion-button full (click)="AddNewClient()">Add New Client</button>
+  </div>
+  <div *ngIf="userType=='A'">
+     <ion-card  *ngFor="let cd of clientData" (click)="OpenClient(cd)">
+         <ion-card-content>
+          <h2>{{cd.project_id}}</h2>
+          <span><b>Client Name:</b></span><p>{{cd.client_name}}</p>
+          <span><b>Status:</b></span><p>{{cd.current_status}}</p>
+        </ion-card-content>    
+    </ion-card>
+  </div >
+  <div *ngIf="flag==false">
+    <ion-card>
+        <h2>No Clients Found </h2>
+    </ion-card> 
+  </div> 
+</ion-content>

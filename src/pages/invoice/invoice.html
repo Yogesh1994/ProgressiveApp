@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Invoice</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+   <b padding> <p style="font-size: 14px; text-transform: uppercase; width: 100%; text-align: center; color: #002433">Generate New Invoice</p></b>
+
+  <div class="form-group" >
+        <label for="sel1">Select Quotation Ref:</label>
+        <!-- <select class="form-control" id="sel1" [(ngModel)]="quotation_ref">
+                  <option disabled>Select</option>
+                  <option *ngFor="let data of quotation">{{data.ref}}</option>
+                  
+                  
+        </select> -->
+        <select  class="form-control" id="sel1" (change)="onChange($event.target.value)">
+            <option *ngFor="let data of quotation">{{data.ref}}</option>
+        </select>
+      </div>
+    <form [formGroup]="userform" (ngSubmit)="onSubmit('Invoice')" >
+
+    <div class="form-group">
+        <label>GST No</label>
+        <input type="text"  #refName class="form-control well well-sm" maxlength="15" formControlName="pen_number" placeholder="Enter GST No" value="AAA" style="text-transform: uppercase">
+       
+      </div>
+      
+      
+        
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" #refName class="form-control well well-sm" formControlName="company_name" placeholder="Enter Company Name">
+        <div *ngIf="userform.controls['company_name'].hasError('minlength')" class="alert alert-danger">
+          Please Enter atleast 4 characters
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="sel1">Select Salutation:</label>
+        <select class="form-control" id="sel1" formControlName="salutation">
+                  <option>Mr.</option>
+                  <option>Mrs.</option>
+                  <option>Miss</option>
+                  
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Client Name</label>
+        <input type="text" #refName class="form-control well well-sm" formControlName="client_name" placeholder="Enter Client Name">
+        <div *ngIf="userform.controls['client_name'].hasError('minlength')" class="alert alert-danger">
+          Please Enter atleast 4 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email ID</label>
+        <input type="email" value="AAA" class="form-control well well-sm" formControlName="email" placeholder="Enter Email ID">
+
+      </div>
+
+      <div class="form-group">
+        <label>Contact No</label>
+        <input value="AAA" type="number" class="form-control well well-sm" formControlName="contact_no" placeholder="Enter Mobile No" maxlength="10">
+        <div *ngIf="userform.controls['contact_no'].hasError('pattern')" class="alert alert-danger">
+          Please Enter 10 Digit
+        </div>
+      </div>  
+
+
+      <div class="form-group">
+        <label for="comment">Address Line 1:</label>
+         <input type="text" class="form-control well well-sm" formControlName="address_line1">
+      </div>
+      <div class="form-group">
+        <label for="comment">Address Line 2:</label>
+         <input type="text" class="form-control well well-sm" formControlName="address_line2">
+      </div>
+      <div class="form-group">
+        <label for="comment">Address Line 3:</label>
+         <input type="text" class="form-control well well-sm" formControlName="address_line3">
+      </div>
+      <div *ngIf="userform.controls['address_line1'].hasError('required') || userform.controls['address_line2'].hasError('required') || userform.controls['address_line3'].hasError('required')" class="alert alert-danger">
+        Please Enter atleast 10 characters
+      </div>
+
+      
+
+
+
+
+
+      <button type="submit" class="btn btn-primary" [disabled]="!userform.valid" style="width: 100%;">Next</button>
+    </form>
+  
+
+  
+</ion-content>

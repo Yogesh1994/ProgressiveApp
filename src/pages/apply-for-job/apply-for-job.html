@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only style="color: #083C5E" *ngIf="isLogin=='No'" (click)="login('Yes')">
+        <ion-icon name="ios-lock" style="color: #fff"></ion-icon>
+      </button>
+      <div *ngIf="isLogin=='Yes'">
+         <button ion-button icon-only (click)="presentPopover($event)">
+           <img src="{{MyPic}}" style="width: 40px; height: 40px; border-radius: 50%">
+         </button>
+      </div>
+    </ion-buttons> -->
+
+
+    <ion-title>Apply For Job </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color: #F8F9FB" padding>
+  <form [formGroup]='userForm' (ngSubmit)="onSubmit()">
+    <label>Your Name</label>
+    <input type="text" class="form-control" formControlName="user_name" placeholder="Enter your Name">
+    <div *ngIf="userForm.controls['user_name'].hasError('required')">
+      <p style="color: red">*Name Required </p>
+    </div>
+    <label>Your Email</label>
+    <input type="email" class="form-control" formControlName="user_email" placeholder="Enter your Email">
+    <div *ngIf="userForm.controls['user_email'].hasError('required')">
+      <p style="color: red">*Email Required </p>
+    </div>
+    <div *ngIf="userForm.controls['user_email'].hasError('pattern')">
+      <p style="color: red">*Enter Valid Email </p>
+    </div>
+    <label>Your Mobile No.</label>
+    <input type="number" formControlName="user_mobile" class="form-control" placeholder="Enter your mobile No">
+    <div *ngIf="userForm.controls['user_mobile'].hasError('required')">
+      <p style="color: red">*Enter Valid Mobile No. </p>
+    </div>
+    <div *ngIf="userForm.controls['user_mobile'].hasError('pattern')">
+      <p style="color: red">*Enter Valid Mobile No. </p>
+    </div>
+
+
+    <label>You Are</label>
+    <select formControlName="user_type" class="form-control" (ngModelChange)="onChange($event)">
+      <option selected>Fresher</option>
+      <option>Experinced</option>
+    </select>
+
+    <div *ngIf="userForm.controls['user_type'].hasError('required')">
+      <p style="color: red">*select employee type </p>
+    </div>
+    <br/>
+    <div *ngIf="flag=='Experinced'">
+      <label>Current Salary</label>
+      <input type="text" formControlName="user_current_salary" class="form-control" placeholder="Enter your current Salary">
+      <br/>
+
+
+    </div>
+    <div *ngIf="flag=='Experinced'">
+      <label>Experiance in Year</label>
+      <input type="number" formControlName="user_total_experiance" class="form-control" placeholder="Enter your Exprience">
+      <br/>
+
+
+    </div>
+
+    <label>Comments (Optional)</label>
+    <textarea class="form-control" formControlName="comment"></textarea>
+    <br/>
+    <button type="submit" style="width:100%" class="btn btn-primary" [disabled]='!userForm.valid'>Apply Now</button>
+  </form>
+</ion-content>

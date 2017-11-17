@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+
+
+    <ion-title>Offers</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: #F8F9FB">
+
+    <div *ngIf="LoginType=='A'" padding>
+      <button ion-button full (click)="offerAdd()">Add Offers</button>
+    </div>
+
+
+  <ion-card *ngFor="let data of offerList">
+    <table border="0" width="100%">
+      <tr>
+        <td padding>
+          <p style="font-size: 15px; color: #083C5E"> {{data.title}} </p>
+          <br>
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div *ngIf="data.offer_status=='ON'">
+            <button ion-item full  (click)="ContactPage()"><p style="color:secondary">Flat {{data.offers}}% off</p></button>
+          </div>
+          <div *ngIf="data.offer_status=='OFF'">
+            <button ion-item full (click)="ContactPage()">
+              <p style="color:secondary">Flat {{data.offers}}% off (Offer End)</p></button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </ion-card>
+</ion-content>

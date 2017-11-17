@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Career at Progressive
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content style="background-color: #F8F9FB">
+  <div *ngIf="!flag">
+    <ion-card>
+      <ion-card-content>
+        <h1 style="color: #0099DC"> We do not have openings now! </h1>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+  <div *ngIf="flag">
+    <ion-card *ngFor="let opening of openings_array" padding>
+      <h1 style="text-align: center"> {{opening.job_position}}</h1>
+      <br>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <b> Work Location </b>
+          </ion-col>
+          <ion-col col-6> {{opening.location}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <b> Job Responsibilities </b>
+          </ion-col>
+          <ion-col col-6> {{opening.job_responsibilities}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <b> Education </b>
+          </ion-col>
+          <ion-col col-6> {{opening.education}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <b> Experiance </b>
+          </ion-col>
+          <ion-col col-6> {{opening.experince}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <b> Skills </b>
+          </ion-col>
+          <ion-col col-6> {{opening.skills}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <b> Job Type </b>
+          </ion-col>
+          <ion-col col-6> {{opening.job_type}} </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <br/>
+      <button class='btn btn-primary' style="width:100%" (click)="apply_job(opening)">Apply Now</button>
+    </ion-card>
+  </div>
+
+
+</ion-content>

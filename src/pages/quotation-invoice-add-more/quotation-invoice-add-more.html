@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+
+
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+
+
+     
+      <form [formGroup]="myForm" novalidate (ngSubmit)="save()" padding>
+        
+        <!--addresses-->
+        <div formArrayName="Particulars">
+
+          
+          <div *ngFor="let address of myForm.controls.Particulars.controls; let i=index" class="panel panel-default">
+            <div class="panel-heading">
+              <span>{{i + 1}}</span>
+              <span class=" pull-right" *ngIf="myForm.controls.Particulars.controls.length > 1" (click)="removeAddress(i)">X</span>
+            </div>
+            <div class="panel-body" [formGroupName]="i">
+<!--                
+              <div class="form-group">
+                <label for="usr">Products/Services</label>
+                <input type="text" class="form-control" id="usr" formControlName="particular">
+                  
+              </div> --> 
+           <div class="form-group">
+            <label>Product Type</label>
+            <select formControlName="productType" class="form-control">
+              <option>Domain/Hosting</option>
+                <option>Website/SSL/IP</option>
+                <option>Android/iOS APP</option>
+                <option>Marketing</option>
+                <option>Custom App/Web</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Product/Services</label>
+            <select formControlName="particular" class="form-control">
+              <option value="Domain Registration - .com/.net/.org">Domain Registration - .com/.net/.org - Rs. 900</option>
+              <option value="Domain Registration - .in/.co.in">Domain Registration - .in/.co.in - Rs. 500</option>
+              <option value="Linux Web Hosting">Linux Web Hosting - Rs. 3,000</option>
+              <option value="Responsive Website Designing">Responsive Website Designing - Rs. 20,000</option>
+              <option value="eCommerce Website Designing">eCommerce Website Designing - Rs. 45,000</option>
+              <option value="Web Based Software">Web Based Software - Rs. 65,000</option>
+              <option value="SSL/Dedicated IP">SSL/Dedicated IP - 25,000 (3 yrs.)</option>
+              <option value="Android Application">Android Application - Rs. 65,000</option>
+              <option value="iOS Application">iOS Application - Rs. 75,000</option>
+              <option value="Android/iOS Application">Android/iOS Application - Rs. 1,15,000</option>
+              <option value="eCommerce Application (Android/iOS)">eCommerce Application (Android/iOS) - Rs. 1,25,000</option>
+              <option value="Monthly AMC">Monthly AMC - Rs. 15,000</option>
+              <option value="Email Marketing">Email Marketing - Rs. 5,000/30,000 emails</option>
+              <option value="SMS Marketing">SMS Marketing - Rs. 5,000/40,000 SMS</option>
+              <option value="Custom Software Development">Custom Software Development</option>
+              <option value="Custom Application Development">Custom Application Development</option>
+              <option value="Custom ERP">Custom ERP</option>
+              <option value="Custom CRM">Custom CRM</option>
+            </select> 
+          
+          </div>
+              <div class="form-group">
+                <label for="sel1">Tenure</label>
+                <select class="form-control" id="sel1" formControlName="tenure">
+                  <option>LifeTime</option>
+                  <option>One Time</option>
+                  <option>1 Year</option>
+                  <option>6 Months</option>
+                  <option>3 Months</option>
+                  <option>1 Month</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="usr">Cost :</label>
+                <input type="number" class="form-control" id="usr" formControlName="cost">
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div formArrayName="Phase" *ngIf="type=='Invoice'">
+
+          
+          <div *ngFor="let address of myForm.controls.Phase.controls; let j=index" class="panel panel-default">
+            <div class="panel-heading">
+              <span>Phase {{j + 1}}</span>
+              <span class=" pull-right" *ngIf="myForm.controls.Phase.controls.length > 1" (click)="removePhase(j)">X</span>
+            </div>
+            <div class="panel-body" [formGroupName]="j">
+                <div class="form-group">
+              <label for="usr">Enter description :</label>
+                 <input type="text" class="form-control" id="usr" formControlName="desc"> 
+                
+            </div> 
+                 <div class="form-group">
+              <label for="usr">Enter Phase{{j+1}} % :</label>
+                 <input type="number" class="form-control" id="usr" formControlName="phaseRate"> 
+                
+            </div>
+            </div>  
+            
+          
+          </div>
+          
+        </div>
+        <div class="row" width="100%">
+          <div class="col-md-4">
+            <a class="btn btn-primary pull-right" (click)="addAddress()" style="cursor: default">
+            Add  +
+          </a>
+          </div>
+        <div class="col-md-4">
+          <a *ngIf="type=='Invoice'" class="btn btn-primary pull-right" (click)="addPhase()"  style="cursor: default">
+          Phase+
+          </a>
+        </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Preview</button>
+          </div>
+          
+        </div>
+        
+        
+      </form>
+ 
+      
+     
+      <br><br>
+
+</ion-content>

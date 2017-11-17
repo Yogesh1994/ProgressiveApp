@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{team_data.full_name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: #F8F9FB">
+  <ion-card>
+    <br>
+    <table border="0" width="100%">
+      <tr>
+        <td align="center">
+          <img src="{{team_data.profile_pic}}" style="width: 100px; height: 100px; margin: 5px; border-radius: 50%">
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <p style="font-size: 16px;color: #111">
+            <b>{{team_data.full_name}}</b>
+          </p>
+          <p style="font-size: 11px;color: #333">{{team_data.experies}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <p style="font-size: 14px;color: #222;margin: 0px">
+            <ion-icon name="ios-at"></ion-icon> &nbsp;{{team_data.email_personal}}</p>
+          <p style="font-size: 14px;color: #222;margin: 0px">
+            <ion-icon name="ios-at-outline"></ion-icon> &nbsp;{{team_data.email_office}}</p>
+          <p style="font-size: 14px;color: #222;margin: 0px">
+            <ion-icon name="ios-call"></ion-icon> &nbsp;{{team_data.mobile}}</p>
+        </td>
+      </tr>
+    </table>
+
+    <br>
+    <br>
+
+
+    <table border="1" width="100%" bordercolor="#d9d9d9">
+      <tr>
+        <td align="center">
+          <a href="tel:{{team_data.mobile}}">
+            <img src="img/call.png" style="width: 50px; height: 50px">
+          </a>
+        </td>
+        <td align="center">
+          <a href="{{team_data.facebook_link}}">
+            <img src="img/facebook.png" style="width: 50px; height: 50px">
+          </a>
+        </td>
+        <td align="center">
+          <a href="{{team_data.twitter_link}}">
+            <img src="img/twitter.png" style="width: 50px; height: 50px">
+          </a>
+        </td>
+        <td align="center">
+          <a href="{{team_data.linkedin_link}}">
+            <img src="img/linkedin.png" style="width: 50px; height: 50px">
+          </a>
+        </td>
+      </tr>
+
+    </table>
+  </ion-card>
+</ion-content>

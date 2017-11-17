@@ -1,14 +1,102 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+
+
+<ion-content style="background-color: #F8F9FB">
+
+  <br/>
+  <br/>
+  <br/>
+  <table width="100%" style="padding-top:10 px; ">
+    <tr width="90%">
+      <td (click)="GotoPage('about')" width="30%" align="center">
+        <img src="img/about.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;;font-size: 12px;">ABOUT</span>
+      </td>
+      <td (click)="GotoPage('services')" width="30%" align="center">
+        <img src="img/services.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">SERVICES</span>
+      </td>
+      <td (click)="GotoPage('team')" width="30%" align="center">
+        <img src="img/team.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">TEAM</span>
+      </td>
+    </tr>
+    <br>
+    <br>
+    <tr width="90%">
+      <!-- <td (click)="GotoPage('offers')" width="30%" align="center">
+        <img src="img/offers.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">OFFERS</span>
+      </td> -->
+      <td (click)="GotoPage('careers')" width="30%" align="center">
+        <img src="img/careers.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">CAREERS</span>
+      </td>
+      <td (click)="GotoPage('contact')" width="30%" align="center">
+        <img src="img/contact.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">CONTACT US</span>
+      </td>
+      <td (click)="GotoPage('ListPage')" width="30%" align="center">
+        <img src="img/client.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">CLIENTS</span>
+      </td>
+    </tr>
+    <br>
+    <br>
+    <tr width="90%">
+      <!-- <td *ngIf="value=='E' || value=='A' || value=='S'" (click)="GotoPage('LeaveList')" width="30%" align="center">
+        <img src="img/leave.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">LEAVE DETAILS</span>
+      </td> -->
+      <!-- <td (click)="QuotationInvoice('Quotation')" *ngIf="value=='A'" width="30%" align="center"><img src="img/quotation.png" style=" width:35px;height:35px;"><br><span style="color: #0D73B9;font-size: 12px;">QUOTATION</span></td> -->
+      <td (click)="GotoPage('InvoicePage')" *ngIf="value=='A' || value=='S'" width="30%" align="center">
+        <img src="img/invoice.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">INVOICE</span>
+      </td>
+      <td (click)="GotoPage('InvoiceReportPage')" *ngIf="value=='A' " width="30%" align="center">
+        <img src="img/invoice.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">INVOICE-REPORT</span>
+      </td>
+      <td (click)="GotoPage('QuotationReportPage')" *ngIf="value=='A' " width="30%" align="center">
+        <img src="img/invoice.png" style=" width:35px;height:35px;">
+        <br>
+        <span style="color: #0D73B9;font-size: 12px;">QUOTATION-REPORT</span>
+      </td>
+
+     
+    </tr>
+    <br>
+    <br>
+    <tr width="90%">
+      
+    </tr>
+    <br>
+    <br>
+
+  </table>
 </ion-content>
+<ion-footer>
+  <!-- <button ion-button full (click)="sendMail()">Send Mail</button> -->
+  <button ion-button full (click)="QuotationInvoice('Quotation')" *ngIf="value=='A' || value=='S'">
+    QUOTATION
+  </button>
+</ion-footer>

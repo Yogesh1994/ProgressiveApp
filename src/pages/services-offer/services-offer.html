@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+
+
+    <ion-title>{{service}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: #F8F9FB">
+
+  <div *ngIf="service=='Android/iOS App Development'" padding>
+    <p style="font-size: 16px; color: #000; width: 100%; text-align: center;text-transform: capitalize;text-align: justify; text-justify: inter-word;">
+      Grow your business 5 to 10 fold by using our automated business tools.</p>
+
+    <br>
+    <p style="font-size: 14px; color: #333; width: 100%; text-transform: capitalize; text-justify: inherit">
+      Exclusive App Development Offers:<br> Android Application :<b> Rs. 45,000+ </b><br> iOS Application : <b>Rs. 55,000+</b><br>
+    </p>
+    <br>
+    <button ion-button full (click)="ContactPage()"> Contact us </button>
+  </div>
+
+  <div *ngIf="service=='Custom CRM/ERP'" padding>
+    <p style="font-size: 16px; color: #000; width: 100%; text-align: center;text-transform: capitalize;text-align: justify; text-justify: inter-word;">
+      Grow your business 5 to 10 fold by using our automated business tools.</p>
+
+    <br>
+    <p style="font-size: 14px; color: #333; width: 100%; text-transform: capitalize; text-justify: inherit">
+      Exclusive Mobile CRM/ERP Offers:<br> CRM :<b> Rs. 85,000+ </b><br> ERP : <b>Rs. 2,50,000+</b><br>
+    </p>
+    <br>
+    <button ion-button full (click)="ContactPage()"> Contact us </button>
+  </div>
+
+  <div *ngIf="service=='Email/Marketing Advantages'" padding>
+    <p style="font-size: 16px; color: #000; width: 100%; text-align: center;text-transform: capitalize;text-align: justify; text-justify: inter-word;">
+      Grow your business 5 to 10 fold by using our automated business tools.</p>
+
+    <br>
+    <p style="font-size: 14px; color: #333; width: 100%; text-transform: capitalize; text-justify: inherit">
+      Exclusive Email/SMS Marketing Offers:<br> Email Marketing :<b> Rs. 5,000+/pm </b><br> <br>
+    </p>
+    <br>
+    <button ion-button full (click)="ContactPage()"> Contact us </button>
+  </div>
+
+  <div *ngIf="service=='Web Software'" padding>
+    <p style="font-size: 16px; color: #000; width: 100%; text-align: center;text-transform: capitalize;text-align: justify; text-justify: inter-word;">
+      Grow your business 5 to 10 fold by using our automated business tools.</p>
+
+    <br>
+    <p style="font-size: 14px; color: #333; width: 100%; text-transform: capitalize; text-justify: inherit">
+
+      Custom Mobile/Web Software Development Offers:<br> Custom software :<b> Rs. 85,000+ </b><br> <br>
+    </p>
+    <br>
+    <button ion-button full (click)="ContactPage()"> Contact us </button>
+  </div>
+
+  <div *ngIf="service=='IT Infrastructure Setup'" padding>
+    <p style="font-size: 16px; color: #000; width: 100%; text-align: center;text-transform: capitalize;text-align: justify; text-justify: inter-word;">
+      Grow your business 5 to 10 fold by using our automated business tools.</p>
+
+    <br>
+    <p style="font-size: 14px; color: #333; width: 100%; text-transform: capitalize; text-justify: inherit">
+
+      We can deploy entire IT Infra setup with server security & backup options<br><br> <br>
+    </p>
+    <br>
+    <button ion-button full (click)="ContactPage()"> Contact us </button>
+  </div>
+
+  <div *ngIf="service=='Server Security'" padding>
+    <p style="font-size: 16px; color: #000; width: 100%; text-align: center;text-transform: capitalize;text-align: justify; text-justify: inter-word;">
+      Grow your business 5 to 10 fold by using our automated business tools.</p>
+
+    <br>
+    <p style="font-size: 14px; color: #333; width: 100%; text-transform: capitalize; text-justify: inherit">
+
+      We can deploy entire IT Infra setup with server security & backup options<br><br> <br>
+    </p>
+    <br>
+    <button ion-button full (click)="ContactPage()"> Contact us </button>
+  </div>
+
+  <div *ngIf="service=='Partner With us'" padding>
+    <p style="font-size: 16px; color: #000; width: 100%; text-align: center;text-transform: capitalize;text-align: justify; text-justify: inter-word;">
+      Grow your business 5 to 10 fold by using our automated business tools.</p>
+
+    <br>
+    <p style="font-size: 14px; color: #333; width: 100%; text-transform: capitalize; text-justify: inherit">
+
+      If you think you can bring more business then partner with us & ear 30% flat commision<br><br> <br>
+    </p>
+    <br>
+    <button ion-button full (click)="ContactPage()"> Contact us </button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,194 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only style="color: #083C5E" *ngIf="isLogin=='No'" (click)="login('Yes')">
+        <ion-icon name="ios-lock" style="color: #fff"></ion-icon>
+      </button>
+      <div *ngIf="isLogin=='Yes'">
+        <img src="{{MyPic}}" style="width: 40px; height: 40px; border-radius: 50%">
+      </div>
+    </ion-buttons> -->
+
+
+    <ion-title>Contact us</ion-title>
+  </ion-navbar>
+</ion-header>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<ion-content>
+  <br>
+  <div class="container">
+
+
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#home">Location</a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#menu2">Send a Message</a>
+      </li>
+
+
+    </ul>
+
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+        <br>
+        <p ion-item color="primary">Development Center</p>
+        <br>
+        <p> Progressive Interactive Pvt. Ltd.
+
+          <ion-icon name="pin"></ion-icon> &nbsp; ​C/9, 3rd Floor, Vivina Building, Andheri West Railway Station, Next to Andheri Stn. Bus Depot
+          Mumbai 400058. Contact :
+          <a href="tel:98194 15910">+91 98194 15910 </a>
+        </p>
+
+        <br>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241258.76485454154!2d72.71430612281692!3d19.12220653688184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9d22f67d247%3A0xfdaaf7e4dbf82efd!2sProgressive+Interactive+%7C+Php+Python%2C+Android%2C+iOS%2C+CRM%2C+ERP%2C+Software+Training+provider+in+Mumbai!5e0!3m2!1sen!2sin!4v1497676662057"
+          width="100%" height="250px" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        <br>
+        <br>
+        <p ion-item color="primary">Marketing Center</p>
+        <br>
+        <p>
+          Laxmi Plaza, Laxmi Industrial Estate, Link Road, Andheri West, Mumbai, Maharashtra 400102. Contact :
+          <a href="tel:98194 15910">+91 98194 15910 </a>
+          
+        </p>
+        <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1921521.9730450113!2d72.22273337213866!3d19.841112099814758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b622ec70bbf7%3A0x2ea6e52a96745d43!2sMobile+Application+Development+Company+in+Mumbai%2C+iOS%2C+Android%2C+CRM%2C+ERP+%7C+Progressive+Interactive!5e0!3m2!1sen!2sin!4v1494053749664"
+          width="100%" height="250px" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+      <div id="menu2" class="tab-pane fade">
+        <br>
+        <form [formGroup]="userform" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label style="">Full Name</label>
+            <input type="text" #refName class="form-control well well-sm" formControlName="name" placeholder="Enter Your Name">
+            <div *ngIf="userform.controls['name'].hasError('minlength')" class="alert alert-danger">
+              Please Enter atleast 4 characters
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+            <label style="">Email Id</label>
+            <input type="email" class="form-control well well-sm" formControlName="email" placeholder="Enter Your Email">
+          </div>
+
+
+          <div class="form-group">
+            <label style="">Mobile No</label>
+            <input type="number" class="form-control well well-sm" formControlName="mobile" placeholder="Enter Mobile No">
+            <div *ngIf="userform.controls['mobile'].hasError('pattern')" class="alert alert-danger">
+              Please Enter 10 Digit
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service_name">Product/Services</label>
+            <select class="form-control" id="service_name" formControlName="service_name" required [(ngModel)]="AMC">
+              <option disabled>Select</option>
+              <option>Website</option>
+              <option>Android App</option>
+              <option>Web/Android/iOS</option>
+              <option>Android/iOS</option>
+              <option>Custom Software</option>
+              <option>ERP</option>
+              <option>Hosting</option>
+              <option>Domain</option>
+              <option>AMC</option>
+            </select>
+          </div>
+
+          <div *ngIf="AMC=='AMC'">
+            <div class="form-group">
+              <label for="amc_services">Services</label>
+              <select class="form-control" id="amc_services" formControlName="amc_services">
+                <option disabled>Select</option>
+                <option>Website</option>
+                <option>Android App</option>
+                <option>Web/Android/iOS</option>
+                <option>Android/iOS</option>
+                <option>Custom Software</option>
+                <option>ERP</option>
+
+              </select>
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+            <label for="service_name">Tenure</label>
+            <table border="0" width="100%">
+              <tr>
+                <td align="left">
+                  <select class="form-control" id="service_name" formControlName="year" required style="width: 98%" [(ngModel)]="service_name">
+                    <option disabled>Select</option>
+                    <option>0 Year</option>
+                    <option>1 Year</option>
+                    <option>2 Year</option>
+                    <option>3 Year</option>
+                    <option>4 Year</option>
+                    <option>5 Year</option>
+                    <option>One Time</option>
+
+                  </select>
+                </td>
+                <td align="right">
+                  <div *ngIf="service_name!='One Time'">
+                    <select class="form-control" id="service_name" formControlName="month" required style="width: 98%">
+                      <option disabled>Select</option>
+                      <option>1 Month</option>
+                      <option>2 Month</option>
+                      <option>3 Months</option>
+                      <option>4 Months</option>
+                      <option>5 Months</option>
+                      <option>6 Months</option>
+                      <option>7 Months</option>
+                      <option>8 Months</option>
+                      <option>9 Months</option>
+                      <option>10 Months</option>
+                      <option>11 Months</option>
+                      <option>12 Months</option>
+                    </select>
+                  </div>
+
+                  <div *ngIf="service_name=='One Time'">
+                    <select class="form-control" id="service_name" formControlName="month" required style="width: 98%">
+                      <option selected> One Time </option>
+                    </select>
+
+                  </div>
+
+                </td>
+              </tr>
+            </table>
+
+          </div> -->
+
+
+          <div class="form-group">
+            <label for="requirment">Requirment</label>
+            <textarea class="form-control" rows="5" id="requirment" formControlName="requirment"></textarea>
+          </div>
+          <div *ngIf="userform.controls['requirment'].hasError('minlength')" class="alert alert-danger">
+            Please Enter atleast 10 characters
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary" [disabled]="!userform.valid" style="width: 100%;">Submit</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</ion-content>
